@@ -1,0 +1,27 @@
+@mixin headFont {
+    font-size:5em;
+    font-weight:700;
+    font-family:sans-serif;
+}
+$titleSize: 3em;
+$full: 100%;
+$circleBox: 50%;
+
+.header {
+    img {
+        border-radius: $circleBox;
+        height: 10em;
+    }
+    h1 {
+            @include headFont
+    }
+    h2 {
+        font-size: $titleSize;
+    }
+    width: $full;
+    height: 15em;
+    background-image: url(images/cityshot.png);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

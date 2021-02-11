@@ -1,0 +1,112 @@
+/*Remember to put 'sass --watch scss:css' from the terminal while in this directory*/
+@import "_head.scss";
+$borderColor: #5e6c70;
+$borderWidth: 2px;
+$greyBack: #ededed;
+$paperWidth: 60vw;
+@mixin backWhite {
+    background-color: white;
+}
+@mixin backOffWhite {
+    background-color: $greyBack;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: $full;
+    display: flex;
+    justify-content: center;
+    background-color: darkgray;
+}
+.content{
+    border-radius: 2em;
+    min-width: 60em;
+    width: $paperWidth;
+    background-color: white;
+}
+#columnHolder{
+    @extend body ;
+    height: auto;
+    background-color: #fefefe;
+    
+    #smallumn{
+        height: auto;
+        border-right: $borderColor;
+        border-right-width: $borderWidth;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        #profDiv{
+            padding: 2em;
+
+            h3{
+                padding-top: .5em;
+                border-bottom: $borderColor;
+                border-bottom-width: $borderWidth;
+            }
+            @include backOffWhite() ;
+        }
+
+        #contactDiv{
+            @extend #profDiv ;
+            background-color: white;
+            #addSec{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                p{
+                    padding-top: 1em;
+                    padding-left: 1em;
+                }
+            }
+            #emailSec{
+                @extend #addSec ;
+            }
+            #phoneSec{
+                @extend #addSec ;
+            }
+            #liSec{
+                @extend #addSec ;
+            }
+        }
+
+        #eduDiv{
+            @extend #profDiv ;
+            @include backOffWhite() ;
+            p{
+                margin-bottom: 0;
+                padding-top: 2em;
+            }
+        }
+    }
+
+    #largumn{
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        #skillDiv{
+            padding: 2em;
+            
+            h3{
+                padding-top: .5em;
+                border-bottom: $borderColor;
+                border-bottom-width: $borderWidth;
+            }
+            h4{
+                padding-top: 1em;
+            }
+            @include backWhite() ;
+        }
+
+        #expDiv{
+            @extend #skillDiv ;
+            @include backOffWhite() ;
+        }
+    }
+}
